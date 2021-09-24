@@ -33,10 +33,7 @@
         <hr>
     </div>
     <div class="post-content">
-        <p>vue恢复初始数据this.$data,this.$options.data())</p>
-<p>vue恢复初始数据</p>
-<p>在vue开发中我们会遇到一个页面或者一个弹窗让他恢复到原始数据的情况，如果数据不多我们可以重设赋值一下，但数据较多的情况下会比较麻烦，这时候可以用到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$data，this.$options</span><br></pre></td></tr></table></figure>
+        <h3 id="vue恢复初始数据this-data-this-options-data"><a href="#vue恢复初始数据this-data-this-options-data" class="headerlink" title="vue恢复初始数据this.$data,this.$options.data())"></a>vue恢复初始数据this.$data,this.$options.data())</h3><h4 id="vue恢复初始数据"><a href="#vue恢复初始数据" class="headerlink" title="vue恢复初始数据"></a>vue恢复初始数据</h4><h4 id="在vue开发中我们会遇到一个页面或者一个弹窗让他恢复到原始数据的情况，如果数据不多我们可以重设赋值一下，但数据较多的情况下会比较麻烦，这时候可以用到"><a href="#在vue开发中我们会遇到一个页面或者一个弹窗让他恢复到原始数据的情况，如果数据不多我们可以重设赋值一下，但数据较多的情况下会比较麻烦，这时候可以用到" class="headerlink" title="在vue开发中我们会遇到一个页面或者一个弹窗让他恢复到原始数据的情况，如果数据不多我们可以重设赋值一下，但数据较多的情况下会比较麻烦，这时候可以用到"></a>在vue开发中我们会遇到一个页面或者一个弹窗让他恢复到原始数据的情况，如果数据不多我们可以重设赋值一下，但数据较多的情况下会比较麻烦，这时候可以用到</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$data = this.$options.data()</span><br></pre></td></tr></table></figure>
 
 <p>this.$options.data() 这个是vue原始的数据，就是你页面刚加载时的data</p>
 <p>this.$data 这个是现在阶段的vue数据，就是你改变data的数据</p>
