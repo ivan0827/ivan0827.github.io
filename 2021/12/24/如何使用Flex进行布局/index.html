@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Hexo
+    </title>
+    <meta name="description" content= 嘿，我是Ivan～这是我的子站，用于展示平时写的博客。主题：Coder。欢迎访问！ >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            如何使用Flex进行布局
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h3 id="Flex-布局又称-“弹性布局”-。任何一个容器都可以指定为-Flex-布局。"><a href="#Flex-布局又称-“弹性布局”-。任何一个容器都可以指定为-Flex-布局。" class="headerlink" title="Flex 布局又称 “弹性布局” 。任何一个容器都可以指定为 Flex 布局。"></a>Flex 布局又称 “弹性布局” 。任何一个容器都可以指定为 Flex 布局。</h3><p>采用 Flex 布局的父元素叫做 “容器” ，子元素叫做 “项”。容器必须设置下面的代码， Flex 布局才会生效。</p>
+<p><code>display:flex | inline-flex</code></p>
+<p>inline-flex 代表容器是个行内元素。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/ceca23f83dccda303eb9f6e37cf5e4bd.png"></p>
+<p>容器有两根轴：水平的主轴和垂直的交叉轴。</p>
+<h4 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h4><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>项(子元素)的排列方向。</p>
+<p><code>.container &#123;  flex-direction: row | row-reverse | column | column-reverse;&#125;</code></p>
+<ul>
+<li>row ：默认，水平方向排列，方向起点在左侧。</li>
+<li>row-reverse ：水平方向逆向排列，方向起点在右侧。</li>
+<li>column ：垂直方向排列，方向起点在顶端。</li>
+<li>column-reverse ：垂直方向排列，方向起点在底端。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/69158c77a3b6a0e9355e99fc491154e3.png"></p>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>项会自动排列在一个方向上，不会换行。如果换行显示，就需要 flex-wrap 属性。</p>
+<p><code>.container &#123;  flex-wrap: nowrap | wrap | wrap-reverse;&#125;</code></p>
+<ul>
+<li>wrap ：默认，不换行。</li>
+<li>wrap：换行，第一行在上面。</li>
+<li>wrap-reverse ：换行，第一行下下面。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/d26fd24a6ed1cd01fbba7dc39edf0487.png"></p>
+<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>flex-direction 属性和 flex-wrap 属性的简写，默认值为 row nowrap 。</p>
+<p><code>.container &#123;  flex-flow:  | ;&#125;</code></p>
+<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>项(子元素)水平 对齐的方式。根据 flex-direction 设置的方向决定水平或垂直对齐。</p>
+<p><code>.container &#123;  justify-content: flex-start | flex-end | center | space-between | space-around;&#125;</code></p>
+<ul>
+<li>flex-start ：默认，项左对齐。</li>
+<li>flex-end ：项右对齐。</li>
+<li>center ：项居中对齐。</li>
+<li>space-between ：项两端对齐，项之间的间隔相等。</li>
+<li>space-around ：项两侧间隔相等，所以第 1 项和第 2 项与边框的距离要比项之间的距离小 1 倍。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/da9da7134c195856d4effd139c0f2afd.png"></p>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>项 (垂直) 对齐的方式。根据 flex-direction 设置的方向决定水平或垂直对齐。</p>
+<p><code>.container &#123;  align-items: stretch | flex-start | flex-end | center | baseline;&#125;</code></p>
+<ul>
+<li>stretch ：默认，如果项没有设置高度或者高度为 auto ，则占满整个容器的高度。</li>
+<li>flex-start ：顶端对齐。</li>
+<li>flex-end ：底端对齐。</li>
+<li>center ：居中对齐。</li>
+<li>baseline ：baseline ：第一行文字的底端 (基线) 对齐。可以设置项的 line-height 看效果。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/31ef64d4bcc54b1f227eb753428078aa.png"></p>
+<h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><p>align-content 属性定义如何使用垂直的剩余空间，也就是说如果项只占用一行，这个属性不发挥作用，如果项换行了，则可以设置剩余垂直空间的对齐方式。根据 flex-direction 设置的方向决定水平或垂直对齐。</p>
+<p><code>.container &#123;  align-content: stretch | flex-start | flex-end | center | space-between | space-around;&#125;</code></p>
+<ul>
+<li>stretch ：默认，占满这个垂直高度。</li>
+<li>flex-start ：顶端对齐。</li>
+<li>flex-end ：底端对齐。</li>
+<li>center ：居中对齐。</li>
+<li>space-between ：两端对齐，间隔平均分布。</li>
+<li>space-around ：项两侧的间隔都相等。所以，边框和项的距离比项与项之间的距离小 1 倍。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/2b281e1c31e37e232136ef76792c221d.png"></p>
+<h4 id="项属性"><a href="#项属性" class="headerlink" title="项属性"></a><strong>项属性</strong></h4><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>定义项的顺序。数值越小，越靠前，默认为 0 。</p>
+<p><code>.item &#123;  order: ;&#125;</code></p>
+<p>比如：</p>
+<p><code>.item-1 &#123;  order: 6;&#125;</code></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/8f0338510baec954c3e1d05e48c70a24.png"></p>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p><code>.item &#123;  flex-grow: ; /* 默认 0 */&#125;</code></p>
+<p>定义项的放大比例，默认为 0 ，不放大。所有项的 flex-grow 属性都为 1 时，如果还有剩余空间，则它们将等分剩余空间。相当于 “份” 的概念。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/612b9b8c2ea67a6d95aa1e8ff47dd1ad.png"></p>
+<h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h3><p>项的缩小比例。项仅在默认宽度之和大于容器的时候才会发生缩小，也就是说在容器宽度不够的时候，才缩小，其缩小的比例是依据 flex-shrink 的值进行设置。默认值为 1 。容器空间不足时，项将等比缩放，如果一个项的 flex-shrink 属性为 0，为 0 的项不缩放。</p>
+<p><code>.item &#123;  flex-shrink: ; /* default 1 */&#125;</code></p>
+<p>2、3 项的 flex-shrink 属性为 0，效果如下:</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/2b706de9972a3b484e0904274165d448.gif"></p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p>定义了项占据容器空间的初始大小。默认为 auto ，即项的本来大小，浏览器会根据这个属性，计算容器是否有多余空间。当设置了项的 width 或 height 时，<strong>flex-basis 优先级更高</strong>。</p>
+<p><code>.item &#123;  flex-basis:  | auto; /* 默认 auto */&#125;</code></p>
+<p>例如，给第 2 项同时设置了 width 和 flex-basis ，那么在分配剩余空间前先计算出第 2 项的尺寸，然后再分配剩余空间，同时第 2 项的宽度为 flex-basis 设置的值，因为它的优先级高。</p>
+<p><code>.item-2 &#123;  width: 100px;  flex-basis: 300px;&#125;</code></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/64a34433d2c665194f2ec3678b83e6b6.png"></p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>设置单个项的对齐方式，可覆盖容器的 align-items 属性。默认值为 auto，表示继承父元素的 align-items 属性，如果父元素没有 align-items 属性，则等同于 stretch 。根据容器的 flex-direction 设置的方向决定水平或垂直对齐。</p>
+<p><code>.item &#123;  align-self: stretch | auto | flex-start | flex-end | center | baseline;&#125;</code></p>
+<ul>
+<li>stretch ：如果项没有设置高度或者高度为 auto，且没有父元素的 align-items 属性 ，则占满整个容器的高度。</li>
+<li>auto ：继承父元素的 align-items 属性，如果父元素没有 align-items 属性，则等同于 stretch 。</li>
+<li>flex-start ：顶端对齐。</li>
+<li>flex-end ：底端对齐。</li>
+<li>center ：居中对齐。</li>
+<li>baseline ：第一行文字的底端 (基线) 对齐。可以设置 line-height 看效果。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/0cbc189c7773124e1a80ff6d6387ce6f.png"></p>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>flex-grow , flex-shrink 、flex-basis 的简写，默认值为 0 1 auto 。后两个属性可选。</p>
+<p><code>.item &#123;  flex: none | auto | [  ||  ]&#125;</code></p>
+<p>none ：为 0 0 auto 。 auto ：就是默认值 1 1 auto 。 flex:1; 代表按照容器减去其它项后的尺寸，然后该容器填满这个尺寸。相当于 flex-grow: 1;。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>水平位置和垂直位置对齐要根据容器的 flex-direction 设置。 文根据根据阮一峰老师《Flex 布局教程》整理。</p>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>版权所有 © 2020 | 作者: Ivan | 主题 By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">本站浏览总访问量: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">本站访问人数: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="z1FihjWEbS8uIfUQdmCtK7zz">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>

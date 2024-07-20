@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Hexo
+    </title>
+    <meta name="description" content= 嘿，我是Ivan～这是我的子站，用于展示平时写的博客。主题：Coder。欢迎访问！ >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            8个最常用的JavaScript对象方法
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h2 id="JavaScript对象方法是包含内置函数定义的属性，用于有效地处理单个对象并从中获取信息。"><a href="#JavaScript对象方法是包含内置函数定义的属性，用于有效地处理单个对象并从中获取信息。" class="headerlink" title="JavaScript对象方法是包含内置函数定义的属性，用于有效地处理单个对象并从中获取信息。"></a>JavaScript对象方法是包含内置函数定义的属性，用于有效地处理单个对象并从中获取信息。</h2><p>语法：ObjectName.methodName()</p>
+<h3 id="1-Object-is"><a href="#1-Object-is" class="headerlink" title="1. Object.is()"></a>1. Object.is()</h3><p>Object.is()是一种判断两个值是否相同的方法。</p>
+<p>语法：Object.is(value1,value2)</p>
+<p>参数：</p>
+<p>​    value1：要比较的第一个值</p>
+<p>​    value2：要比较的第二个值</p>
+<p>​    返回值：一个布尔表达式，指示两个参数是否具有相同的值</p>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.is(<span class="number">25</span>,<span class="number">25</span>);<span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="string">&#x27;foo&#x27;</span>,<span class="string">&#x27;bar);// false</span></span><br><span class="line"><span class="string">Object.is(foo,foo);// true</span></span><br><span class="line"><span class="string">Object.is(0,-0); // false</span></span><br><span class="line"><span class="string">Object.is(0n,-0n); // true</span></span><br><span class="line"><span class="string">Object.is(Nan,0/0); // true</span></span><br><span class="line"><span class="string">Object.is(Nan,Nmber.Nan); // true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Object-assign"><a href="#2-Object-assign" class="headerlink" title="2.Object.assign()"></a>2.Object.assign()</h3><p>Object.assign()方法用于将所有可枚举的自身属性从一个或多个源对象复制到目标对象。</p>
+<p>语法：Object.assign(target,…source)</p>
+<p>参数：</p>
+<p>target：目标对象—应用源属性的对象，修改后返回。</p>
+<p>source：源对象—包含你要应用的属性的对象。</p>
+<p>返回值：修改后的目标对象</p>
+<p>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const target = &#123; a: 1, b: 2 &#125;;</span><br><span class="line">const source = &#123; b: 4, c: 5 &#125;;</span><br><span class="line">const returnedTarget = Object.assign(target, source);</span><br><span class="line">console.log(target);</span><br><span class="line">// expected output: Object &#123; a: 1, b: 4, c: 5 &#125;</span><br><span class="line">console.log(returnedTarget);</span><br><span class="line">// expected output: Object &#123; a: 1, b: 4, c: 5 &#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：如果元对象中的属性具有相同的键，则目标对象中的属性会被源中的属性覆盖。较晚来源的属性会覆盖较早来源的属性</p>
+<h3 id="3-Object-entries"><a href="#3-Object-entries" class="headerlink" title="3.Object.entries()"></a>3.Object.entries()</h3><p>Object.entries()方法返回给定对象自己的可枚举字符串键属性[key,value]对的数组</p>
+<p>它类似于使用for…in循环进行迭代，除了for…in循环还会枚举原型链中的属性。属性的顺序与通过手动循环对象的属性值给出的顺序相同</p>
+<p>语法：Object.entries(obj)</p>
+<p>参数：</p>
+<p>obj：要返回自己的可枚举字符串键属性[key,value]对的对象</p>
+<p>返回值：给定对象自己的可枚举字符串键属性[key,value]对的数组</p>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object1 = &#123;<span class="attr">name</span>:<span class="string">&#x27;David&#x27;</span>,<span class="attr">age</span>:<span class="number">23</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> [key,value] <span class="keyword">of</span> <span class="built_in">Object</span>.entries(object1)) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;key&#125;</span>:<span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &quot;name:David&quot;</span></span><br><span class="line"><span class="comment">// &quot;age:23&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Object-values"><a href="#4-Object-values" class="headerlink" title="4.Object.values()"></a>4.Object.values()</h3><p>Object.values()方法返回给定对象自己的可枚举属性值的数组，其顺序与for…in循环提供的顺序相同</p>
+<p>语法：Object.values(obj)</p>
+<p>参数：</p>
+<p>obj: 要返回其可枚举自身属性值的对象</p>
+<p>返回值：包含给定对象自己的可枚举属性值的数组</p>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object1 = &#123;</span><br><span class="line">  <span class="attr">a</span>: <span class="string">&#x27;somestring&#x27;</span>,</span><br><span class="line">  <span class="attr">b</span>:<span class="number">42</span>,</span><br><span class="line">  <span class="attr">c</span>: <span class="literal">false</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.values(object1));</span><br><span class="line"><span class="comment">// expected output: Array [&quot;somestring&quot;,42,false]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Object-prototype-hasOwnProperty"><a href="#5-Object-prototype-hasOwnProperty" class="headerlink" title="5.Object.prototype.hasOwnProperty()"></a>5.Object.prototype.hasOwnProperty()</h3><p>Object.prototype.hasOwnProperty()方法返回一个布尔值，指示对象是否具有指定的属性作为他自己的属性。</p>
+<p>如果指定的属性是对象的直接属性，则该方法返回true—即使值为null或未定义。如果该属性是继承的或者根本没有声明，则返回false。</p>
+<p>语法; hasOwnProperty(prop)</p>
+<p>参数</p>
+<p>prop：要测试的属性的字符串名称或符号</p>
+<p>返回值：如果对象将指定的属性作为自己的属性，则返回true；否则为false。</p>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object1 = &#123;&#125;;</span><br><span class="line">object1.property1 = <span class="number">42</span>;</span><br><span class="line"><span class="built_in">console</span>.log(object1.hasOwnProperty(<span class="string">&#x27;property1&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: true</span></span><br><span class="line"><span class="built_in">console</span>.log(object1.hasOwnProperty(<span class="string">&#x27;toString&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: false</span></span><br><span class="line"><span class="built_in">console</span>.log(object1.hasOwnProperty(<span class="string">&#x27;hasOwnProperty&#x27;</span>));</span><br><span class="line"><span class="comment">// expected output: false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Object-keys"><a href="#6-Object-keys" class="headerlink" title="6.Object.keys()"></a>6.Object.keys()</h3><p>Object.keys()方法用于返回给定对象自己的可枚举属性名称组成的数组，以与普通循环相同的顺序迭代</p>
+<p>语法：Object.keys(obj)</p>
+<p>参数：</p>
+<p>obj: 要返回可枚举自身属性的对象</p>
+<p>返回值：表示给定对象的所有可枚举属性的字符串数组</p>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object1 = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="string">&#x27;somestring&#x27;</span>,</span><br><span class="line">  	<span class="attr">b</span>: <span class="number">42</span>,</span><br><span class="line">  	<span class="attr">c</span>: <span class="literal">false</span></span><br><span class="line">&#125;;</span><br><span class="line">consle.log(<span class="built_in">Object</span>.keys(object1));</span><br><span class="line"><span class="comment">// expected output: Array [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-Object-prototype-toString"><a href="#7-Object-prototype-toString" class="headerlink" title="7.Object.prototype.toString()"></a>7.Object.prototype.toString()</h3><p>toString()方法返回一个表示对象的字符串。当对象将被表示为文本值或以期望字符串的方式引用对象时，将自动调用此方法id。默认情况下，toString()方法由从Object继承的每个对象继承。</p>
+<p>语法： toString()</p>
+<p>返回值： 表示对象的字符串</p>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> dog1 = <span class="keyword">new</span> Dog(<span class="string">&#x27;Gabby&#x27;</span>);</span><br><span class="line">Dog.prototype.toString = <span class="function"><span class="keyword">function</span> <span class="title">dogToString</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.name&#125;</span>`</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(dog1.toString());</span><br><span class="line"><span class="comment">// expected output: &quot;Gabby&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：对于 Numbers 和 Big Ints，toString() 采用可选参数 radix，其值必须最小为 2，最大为 36。</p>
+<h3 id="8-Object-freeze"><a href="#8-Object-freeze" class="headerlink" title="8. Object.freeze()"></a>8. Object.freeze()</h3><p>Object.freeze()方法冻结一个对象，这意味着它不可能再被更改。冻结对象可防止向其添加新属性，防止删除现有属性，防止更改现有属性的可枚举型、可配置性或可写性，并防止更改该现有属性的值。它还可以防止其原型被更改。</p>
+<p>语法： Object.freeze(obj)</p>
+<p>参数：</p>
+<p>obj：要冻结的对象</p>
+<p>返回值：传递给函数的对象</p>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="attr">prop</span>:<span class="number">42</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.freeze(obj);</span><br><span class="line">obj.prop = <span class="number">33</span>;</span><br><span class="line"><span class="comment">// Throws an error in strict mode</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.prop);</span><br><span class="line"><span class="comment">//  expected output: 42</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>版权所有 © 2020 | 作者: Ivan | 主题 By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">本站浏览总访问量: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">本站访问人数: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="z1FihjWEbS8uIfUQdmCtK7zz">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
